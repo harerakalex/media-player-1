@@ -30,6 +30,7 @@ android {
     compileSdkVersion safeExtGet("compileSdkVersion", 28)
 
     defaultConfig {
+        multiDexEnabled true // <-- ADD THIS in the defaultConfig section
         minSdkVersion safeExtGet("minSdkVersion", 16) // RN's minimum version
         targetSdkVersion safeExtGet("targetSdkVersion", 28)
 
@@ -58,6 +59,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'androidx.multidex:multidex:2.0.1'  // <-- ADD THIS DEPENDENCY
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'
 
