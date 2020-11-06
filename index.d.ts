@@ -131,6 +131,7 @@ declare namespace RNTrackPlayer {
   export function skipToNext(): Promise<void>;
   export function skipToPrevious(): Promise<void>;
   export function repeat(): Promise<void>;
+  export function shuffleTracks(): Promise<void>;
   export function removeUpcomingTracks(): Promise<void>;
 
   // Control Center / Notification Metadata Commands

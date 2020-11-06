@@ -302,6 +302,11 @@ public class MusicModule extends ReactContextBaseJavaModule implements ServiceCo
     }
 
     @ReactMethod
+    public void shuffleTracks(final Promise callback) {
+        waitForConnection(() -> binder.getPlayback().shuffleTracks(callback));
+    }
+
+    @ReactMethod
     public void repeat(final Promise callback) {
         waitForConnection(() -> binder.getPlayback().repeat(callback));
     }

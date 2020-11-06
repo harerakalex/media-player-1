@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author Guichaguri
@@ -139,6 +140,19 @@ public abstract class ExoPlayback<T extends Player> implements EventListener, Me
 
     public void repeat(Promise promise) {
         int current = player.getCurrentWindowIndex();
+
+        lastKnownWindow = player.getCurrentWindowIndex();
+        lastKnownPosition = player.getCurrentPosition();
+
+        player.seekToDefaultPosition(current);
+        promise.resolve(null);
+    }
+
+    public void shuffleTracks(Promise promise) {
+        Random rand = new Random();
+        int length = queue.size();
+
+        int current = rand.nextInt(length); 
 
         lastKnownWindow = player.getCurrentWindowIndex();
         lastKnownPosition = player.getCurrentPosition();
