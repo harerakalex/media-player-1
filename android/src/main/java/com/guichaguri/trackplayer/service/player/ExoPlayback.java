@@ -137,6 +137,16 @@ public abstract class ExoPlayback<T extends Player> implements EventListener, Me
         promise.resolve(null);
     }
 
+    public void repeat(Promise promise) {
+        int current = player.getCurrentWindowIndex();
+
+        lastKnownWindow = player.getCurrentWindowIndex();
+        lastKnownPosition = player.getCurrentPosition();
+
+        player.seekToDefaultPosition(current);
+        promise.resolve(null);
+    }
+
     public void play() {
         player.setPlayWhenReady(true);
     }
