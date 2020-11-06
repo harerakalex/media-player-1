@@ -115,7 +115,7 @@ declare namespace RNTrackPlayer {
     forwardIcon?: ResourceObject;
     color?: number;
 
-    repeatMode: RepeatMode;
+    repeatMode?: RepeatMode;
   }
 
   // General
